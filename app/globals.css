@@ -420,6 +420,15 @@ h1 {
     opacity: 0.6;
 }
 
+.price-mo {
+    font-size: 24px;
+    font-weight: 500;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: var(--text-muted);
+    color: var(--text-muted);
+}
+
 .price-period {
     font-size: 18px;
     color: var(--text-muted);

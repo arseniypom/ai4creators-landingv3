@@ -4,8 +4,8 @@ export default function Home() {
       {/* Hero */}
       <section className="hero">
         <div className="container">
-          <div className="eyebrow">For US-Based Experts</div>
-          <h1>Stop guessing what to post.<br /><span className="gradient-text">Start getting sales.</span></h1>
+          <div className="eyebrow">Your AI co-pilot for Instagram growth</div>
+          <h1>Stop guessing<br />what to post.<br /><span className="gradient-text">Start getting sales.</span></h1>
           <p className="hero-sub">Get scripts built for YOUR audience based on proven winners. Ready to film every week.</p>
           <a href="#pricing" className="cta-primary">Join Early Access — $29/mo</a>
           <p className="trust-line">Be one of the first 50 clients to try</p>
@@ -33,12 +33,14 @@ export default function Home() {
 
             <div className="how-step" data-number="02">
               <h3>You Get Proven Scripts</h3>
-              <p>5 ready-to-use content scripts based on formats that already convert and tailored to YOUR specific niche and audience (that&apos;s why we need to make the analysis first).</p>
+              <p>Every week you get 5 proven Reels templates — the same formats other creators used to get clients and thousands in sales.
+              Just plug in your offer — the structure is already built to convert.</p>
             </div>
 
             <div className="how-step" data-number="03">
-              <h3>Choose Your Format</h3>
-              <p>Every script works as: Reels (talking head/voiceover/B-roll) OR Carousel. Hook, structure, CTA, editing tips — ready to film.</p>
+              <h3>Tailor It in One Click</h3>
+              <p>Pick any template and tailor it to your product or service in one click.
+              Hook, main points, CTA — instantly rewritten in your voice for your exact audience.</p>
             </div>
           </div>
         </div>
@@ -84,8 +86,8 @@ export default function Home() {
         <div className="container">
           <div className="section-title">Paid Early Access</div>
           <div className="price-box">
-            <div className="price"><span className="price-old">$49</span>$29</div>
-            <div className="price-period">per month — locked in forever</div>
+            <div className="price"><span className="price-old">$49</span>$29<span className="price-mo">/mo</span></div>
+            <div className="price-period">early adopter price</div>
 
             <div className="process-steps">
               <div className="process-label">After you join:</div>
@@ -113,8 +115,8 @@ export default function Home() {
             </div>
 
             <a href="#" className="cta-primary">Join Early Access</a>
-            <p className="guarantee">Cancel anytime. Keep everything.</p>
-            <p className="transparency-note">You&apos;re getting personal attention, not an automated tool — that&apos;s the pilot advantage.</p>
+            <p className="guarantee">7-day money back guarantee</p>
+            <p className="transparency-note">You&apos;re getting personal service while we build the tool — that&apos;s the pilot advantage.</p>
           </div>
         </div>
       </section>
