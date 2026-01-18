@@ -579,8 +579,32 @@ h1 {
         padding: 80px 0;
     }
 
+    /* Mobile carousel */
     .features-grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 16px;
+        padding-bottom: 16px;
+        margin: 0 -24px;
+        padding-left: 24px;
+        padding-right: 24px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .features-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .feature-card {
+        flex: 0 0 85%;
+        scroll-snap-align: center;
+    }
+
+    .feature-card:hover {
+        transform: none;
+        box-shadow: none;
     }
 
     .feature-card:last-child {
