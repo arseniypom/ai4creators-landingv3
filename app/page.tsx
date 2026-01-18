@@ -5,10 +5,10 @@ export default function Home() {
       <section className="hero">
         <div className="container">
           <div className="eyebrow">For US-Based Experts</div>
-          <h1>Stop Creating Content That Gets Views But Zero Clients</h1>
+          <h1>Stop guessing.<br /><span className="gradient-text">Get sales with content</span></h1>
           <p className="hero-sub">Get scripts built for YOUR audience — not random templates. Based on proven winners. Ready to film every week.</p>
-          <a href="#pricing" className="cta-primary">Start Week 1 — $29</a>
-          <p className="trust-line">Cancel anytime. No BS.</p>
+          <a href="#pricing" className="cta-primary">Join Early Access — $29/mo</a>
+          <p className="trust-line">Limited spots. Cancel anytime.</p>
         </div>
       </section>
 
@@ -80,12 +80,18 @@ export default function Home() {
       {/* Pricing */}
       <section className="pricing" id="pricing">
         <div className="container">
-          <div className="section-title">Start Today</div>
+          <div className="section-title">Founding Member Access</div>
           <div className="price-box">
-            <div className="price">$29</div>
-            <div className="price-period">First Week</div>
-            <a href="#" className="cta-primary">Get Your Strategy + Week 1</a>
-            <p className="guarantee">Then $49/week. Cancel anytime. Keep all materials.</p>
+            <div className="price"><span className="price-old">$49</span>$29</div>
+            <div className="price-period">per month — locked in</div>
+            <ul className="price-benefits">
+              <li>Personal strategy report<span className="benefit-sub">right after onboarding</span></li>
+              <li>5 converting reel templates<span className="benefit-sub">weekly</span></li>
+              <li>Direct feedback during pilot phase<span className="benefit-sub">you shape the product</span></li>
+            </ul>
+            <a href="#" className="cta-primary">Join Early Access</a>
+            <p className="guarantee">Cancel anytime. Keep all materials.</p>
+            <p className="transparency-note">You&apos;re joining before full automation — which means more personal attention while we build.</p>
           </div>
         </div>
       </section>
@@ -114,6 +120,11 @@ export default function Home() {
             <div className="faq-item">
               <h3>What if the content doesn&apos;t work for me?</h3>
               <p>Cancel anytime. You keep the strategy report and all scripts. But if the content is built for your specific audience and based on proven formats, it works.</p>
+            </div>
+
+            <div className="faq-item">
+              <h3>What&apos;s &quot;early access&quot; mean?</h3>
+              <p>We&apos;re in pilot phase — scripts are personally crafted, not fully automated yet. That means more hands-on attention for you while we refine the system. You get better results, we get feedback. Win-win.</p>
             </div>
           </div>
         </div>

@@ -38,7 +38,7 @@ A light, premium SaaS aesthetic inspired by Flowline. Use this reference to styl
 
 ### Font Family
 ```css
-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+font-family: 'Onest', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 ```
 
 ### Scale

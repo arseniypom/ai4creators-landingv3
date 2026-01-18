@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --bg: #ffffff;
     --bg-soft: #fbf5ff;
@@ -27,7 +31,7 @@
 }
 
 body {
-    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: var(--font-onest), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: var(--bg);
     color: var(--text);
     line-height: 1.6;
@@ -65,7 +69,20 @@ body {
     transform: translateX(-50%);
     width: 1000px;
     height: 1000px;
-    background: radial-gradient(circle, rgba(125, 95, 146, 0.12) 0%, rgba(180, 156, 197, 0.05) 40%, transparent 70%);
+    background: radial-gradient(50% 50% at 50% 50%, #ecd8f3 0%, transparent 70%);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(50% 50% at 50% 50%, #ecd8f3 0%, transparent 70%);
+    opacity: 0.4;
     pointer-events: none;
 }
 
@@ -101,11 +118,18 @@ body {
 h1 {
     font-size: 64px;
     line-height: 1.1;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 24px;
     color: var(--text);
     max-width: 800px;
     animation: fadeInUp 0.6s ease-out 0.1s both;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #a855f7, #ec4899, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero-sub {
@@ -120,7 +144,9 @@ h1 {
 .cta-primary {
     display: inline-block;
     padding: 18px 48px;
-    background: var(--accent-gradient);
+    background: linear-gradient(to right, #a855f7, #ec4899, #f97316);
+    background-size: 150% 100%;
+    background-position: 0% 50%;
     color: var(--text-inverse);
     font-size: 18px;
     font-weight: 600;
@@ -128,12 +154,13 @@ h1 {
     border-radius: var(--radius-pill);
     transition: all 0.3s ease;
     animation: fadeInUp 0.6s ease-out 0.3s both;
-    box-shadow: var(--shadow-soft);
+    box-shadow: 0 4px 24px rgba(168, 85, 247, 0.3);
 }
 
 .cta-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-hover);
+    transform: translateY(-3px) scale(1.02);
+    background-position: 100% 50%;
+    box-shadow: 0 8px 32px rgba(236, 72, 153, 0.4);
 }
 
 .trust-line {
@@ -235,6 +262,37 @@ h1 {
 .features {
     padding: 100px 0;
     background: var(--bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.features::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: -300px;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(50% 50% at 50% 50%, #ecd8f3 0%, transparent 70%);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.features::after {
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    right: -200px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(50% 50% at 50% 50%, #ecd8f3 0%, transparent 70%);
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.features .container {
+    position: relative;
+    z-index: 1;
 }
 
 .features .section-title {
@@ -296,6 +354,26 @@ h1 {
     padding: 100px 0;
     background: linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 100%);
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 900px;
+    background: radial-gradient(50% 50% at 50% 50%, #ecd8f3 0%, transparent 60%);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.pricing .container {
+    position: relative;
+    z-index: 1;
 }
 
 .price-box {
@@ -318,12 +396,58 @@ h1 {
     background-clip: text;
     line-height: 1;
     margin-bottom: 8px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 12px;
+}
+
+.price-old {
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--text-light);
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: var(--text-light);
+    text-decoration: line-through;
+    opacity: 0.6;
 }
 
 .price-period {
     font-size: 18px;
     color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.price-benefits {
+    list-style: none;
     margin-bottom: 32px;
+    text-align: left;
+}
+
+.price-benefits li {
+    font-size: 16px;
+    color: var(--text);
+    padding: 8px 0;
+    padding-left: 24px;
+    position: relative;
+}
+
+.price-benefits li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.benefit-sub {
+    display: block;
+    font-size: 13px;
+    color: var(--text-light);
+    font-weight: 400;
+    margin-top: 2px;
 }
 
 .price-box .cta-primary {
@@ -338,12 +462,42 @@ h1 {
     margin-top: 24px;
 }
 
+.transparency-note {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-top: 16px;
+    font-style: italic;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+}
+
 /* ================================
    FAQ SECTION
    ================================ */
 .faq {
     padding: 100px 0 120px;
     background: var(--bg);
+    position: relative;
+    overflow: hidden;
+}
+
+.faq::before {
+    content: '';
+    position: absolute;
+    top: -300px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(50% 50% at 50% 50%, #ecd8f3 0%, transparent 70%);
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+.faq .container {
+    position: relative;
+    z-index: 1;
 }
 
 .faq .section-title {
