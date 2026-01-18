@@ -15,7 +15,43 @@ export default function Home() {
       {/* Problem */}
       <section className="problem">
         <div className="container">
-          <p className="problem-text">You post Reels and carousels. But <strong>generic content doesn&apos;t bring clients</strong> because it wasn&apos;t made for YOUR specific audience.</p>
+          {/* <p className="problem-text">You post Reels and carousels. But <strong>generic content doesn&apos;t bring clients</strong> because it wasn&apos;t made for YOUR specific audience.</p> */}
+
+          <p className="problem-text">You post consistently. But consistency won&apos;t bring clients if <strong>your content is missing the conversion structure</strong></p>
+        </div>
+      </section>
+
+      {/* VS Comparison */}
+      <section className="vs-section">
+        <div className="container">
+          <div className="vs-container">
+            {/* Without */}
+            <div className="vs-card vs-without">
+              <div className="vs-label">Without strategy</div>
+              <div className="vs-metric">
+                <span className="vs-icon">❤️</span>
+                <span className="vs-number">2,847</span>
+                <span className="vs-unit">likes</span>
+              </div>
+            </div>
+
+            {/* Arrow */}
+            <div className="vs-arrow">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </div>
+
+            {/* With */}
+            <div className="vs-card vs-with">
+              <div className="vs-label">With strategy</div>
+              <div className="vs-metric">
+                <span className="vs-icon">💰</span>
+                <span className="vs-number">$4,200</span>
+                <span className="vs-unit">this month</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

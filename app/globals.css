@@ -27,6 +27,7 @@ html {
     --radius-sm: 12px;
     --radius-md: 16px;
     --radius-lg: 20px;
+    --radius-xl: 32px;
     --radius-pill: 100px;
 }
 
@@ -194,6 +195,192 @@ h1 {
 .problem-text strong {
     color: var(--text);
     font-weight: 600;
+}
+
+/* ================================
+   VS COMPARISON SECTION
+   ================================ */
+.vs-section {
+    padding: 80px 0;
+    background: var(--bg);
+}
+
+.vs-container {
+    display: flex;
+    gap: 16px;
+    align-items: stretch;
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.vs-card {
+    flex: 1;
+    padding: 32px 24px;
+    border-radius: var(--radius-xl);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Without card — muted, faded feel */
+.vs-without {
+    background: linear-gradient(145deg, #f7f4f9 0%, #f0ebf4 100%);
+    border: 1px solid rgba(125, 95, 146, 0.08);
+}
+
+.vs-without::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 10px,
+        rgba(125, 95, 146, 0.02) 10px,
+        rgba(125, 95, 146, 0.02) 20px
+    );
+    pointer-events: none;
+}
+
+/* With card — vibrant, glowing */
+.vs-with {
+    background: var(--bg-dark);
+    position: relative;
+}
+
+.vs-with::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle at 30% 70%,
+        rgba(168, 85, 247, 0.15) 0%,
+        transparent 50%
+    );
+    pointer-events: none;
+}
+
+.vs-with::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    right: -30%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(
+        circle at 70% 80%,
+        rgba(236, 72, 153, 0.1) 0%,
+        transparent 50%
+    );
+    pointer-events: none;
+}
+
+/* Labels */
+.vs-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.vs-without .vs-label {
+    color: var(--text-light);
+    opacity: 0.7;
+}
+
+.vs-with .vs-label {
+    color: var(--accent-light);
+}
+
+/* Metric display */
+.vs-metric {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.vs-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+
+.vs-without .vs-icon {
+    filter: grayscale(30%);
+    opacity: 0.6;
+}
+
+.vs-number {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.vs-without .vs-number {
+    color: var(--text-light);
+}
+
+.vs-with .vs-number {
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f97316 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.vs-unit {
+    font-size: 13px;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+.vs-without .vs-unit {
+    color: var(--text-light);
+    opacity: 0.6;
+}
+
+.vs-with .vs-unit {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Center arrow */
+.vs-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    background: var(--bg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(39, 31, 54, 0.12);
+    border: 1px solid rgba(125, 95, 146, 0.1);
+}
+
+.vs-arrow svg {
+    width: 18px;
+    height: 18px;
+    color: var(--accent);
 }
 
 /* ================================
@@ -632,6 +819,37 @@ h1 {
 
     .problem-text {
         font-size: 22px;
+    }
+
+    .vs-section {
+        padding: 60px 0;
+    }
+
+    .vs-container {
+        max-width: 100%;
+    }
+
+    .vs-card {
+        padding: 24px 16px;
+        border-radius: var(--radius-lg);
+    }
+
+    .vs-number {
+        font-size: 32px;
+    }
+
+    .vs-icon {
+        font-size: 24px;
+    }
+
+    .vs-arrow {
+        width: 32px;
+        height: 32px;
+    }
+
+    .vs-arrow svg {
+        width: 14px;
+        height: 14px;
     }
 
     .how-it-works {
