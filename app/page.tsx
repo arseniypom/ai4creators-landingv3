@@ -5,45 +5,46 @@ export default function Home() {
       <section className="hero">
         <div className="container">
           <div className="eyebrow">For US-Based Experts</div>
-          <h1>Stop guessing.<br /><span className="gradient-text">Get sales with content</span></h1>
-          <p className="hero-sub">Get scripts built for YOUR audience — not random templates. Based on proven winners. Ready to film every week.</p>
+          <h1>Stop guessing what to post.<br /><span className="gradient-text">Start getting sales.</span></h1>
+          <p className="hero-sub">Get scripts built for YOUR audience based on proven winners. Ready to film every week.</p>
           <a href="#pricing" className="cta-primary">Join Early Access — $29/mo</a>
-          <p className="trust-line">Limited spots. Cancel anytime.</p>
+          <p className="trust-line">Be one of the first 50 clients to try</p>
         </div>
       </section>
 
       {/* Problem */}
       <section className="problem">
         <div className="container">
-          <p className="problem-text">You post Reels. You try carousels. But <strong>generic content doesn&apos;t bring clients</strong> because it wasn&apos;t made for YOUR specific audience.</p>
+          <p className="problem-text">You post Reels and carousels. But <strong>generic content doesn&apos;t bring clients</strong> because it wasn&apos;t made for YOUR specific audience.</p>
         </div>
       </section>
 
       {/* How It Works */}
       <section className="how-it-works">
         <div className="container">
-          <div className="section-title">Here&apos;s The Difference</div>
+          <div className="section-title">How it works</div>
 
           <div className="how-steps">
             <div className="how-step" data-number="01">
-              <h3>We Analyze YOUR Market First</h3>
-              <p>Deep dive into your niche, ideal client profile, their actual pain points, and buying triggers. Not guesswork — real strategy.</p>
+              <h3>We Analyze Your Market First</h3>
+              <p className="step-subtitle">Answer a short questionnaire → get a clear marketing report</p>
+              <p>Niche, ideal client, pain points, buying triggers. Not guesswork — real strategy.</p>
             </div>
 
             <div className="how-step" data-number="02">
-              <h3>You Get Scripts That Already Worked</h3>
-              <p>5 content ideas per week based on proven formats that convert. Not made up from scratch — reverse-engineered from content that actually gets clients.</p>
+              <h3>You Get Proven Scripts</h3>
+              <p>5 ready-to-use content scripts based on formats that already convert and tailored to YOUR specific niche and audience (that&apos;s why we need to make the analysis first).</p>
             </div>
 
             <div className="how-step" data-number="03">
-              <h3>Choose Your Format. We Handle The Rest.</h3>
-              <p>Every script works as: Reels (talking head/voiceover/B-roll) OR Carousel. Hook, structure, CTA, montage tips — ready to execute.</p>
+              <h3>Choose Your Format</h3>
+              <p>Every script works as: Reels (talking head/voiceover/B-roll) OR Carousel. Hook, structure, CTA, editing tips — ready to film.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features */}
+      {/* Features - Hidden for now
       <section className="features">
         <div className="container">
           <div className="section-title">What You Actually Get</div>
@@ -76,22 +77,44 @@ export default function Home() {
           </div>
         </div>
       </section>
+      */}
 
       {/* Pricing */}
       <section className="pricing" id="pricing">
         <div className="container">
-          <div className="section-title">Founding Member Access</div>
+          <div className="section-title">Paid Early Access</div>
           <div className="price-box">
             <div className="price"><span className="price-old">$49</span>$29</div>
-            <div className="price-period">per month — locked in</div>
-            <ul className="price-benefits">
-              <li>Personal strategy report<span className="benefit-sub">right after onboarding</span></li>
-              <li>5 converting reel templates<span className="benefit-sub">weekly</span></li>
-              <li>Direct feedback during pilot phase<span className="benefit-sub">you shape the product</span></li>
-            </ul>
+            <div className="price-period">per month — locked in forever</div>
+
+            <div className="process-steps">
+              <div className="process-label">After you join:</div>
+              <div className="process-step">
+                <span className="process-num">1</span>
+                <div>
+                  <strong>Receive a Quick form</strong>
+                  <span>Tell us about your niche &amp; product</span>
+                </div>
+              </div>
+              <div className="process-step">
+                <span className="process-num">2</span>
+                <div>
+                  <strong>Your strategy report</strong>
+                  <span>Delivered within 48 hours to your inbox after you fill out the form</span>
+                </div>
+              </div>
+              <div className="process-step">
+                <span className="process-num">3</span>
+                <div>
+                  <strong>Weekly scripts to your inbox</strong>
+                  <span>5 ready-to-film templates</span>
+                </div>
+              </div>
+            </div>
+
             <a href="#" className="cta-primary">Join Early Access</a>
-            <p className="guarantee">Cancel anytime. Keep all materials.</p>
-            <p className="transparency-note">You&apos;re joining before full automation — which means more personal attention while we build.</p>
+            <p className="guarantee">Cancel anytime. Keep everything.</p>
+            <p className="transparency-note">You&apos;re getting personal attention, not an automated tool — that&apos;s the pilot advantage.</p>
           </div>
         </div>
       </section>
