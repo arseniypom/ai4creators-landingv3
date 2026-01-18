@@ -390,7 +390,7 @@ h1 {
 .price {
     font-size: 72px;
     font-weight: 700;
-    background: var(--accent-gradient);
+    background: linear-gradient(to right, #a855f7, #ec4899, #f97316);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

@@ -15,7 +15,7 @@ export default function Home() {
       {/* Problem */}
       <section className="problem">
         <div className="container">
-          <p className="problem-text">You post Reels. You try carousels. But <strong>generic content advice doesn&apos;t bring clients</strong> because it wasn&apos;t made for YOUR specific audience.</p>
+          <p className="problem-text">You post Reels. You try carousels. But <strong>generic content doesn&apos;t bring clients</strong> because it wasn&apos;t made for YOUR specific audience.</p>
         </div>
       </section>
 
