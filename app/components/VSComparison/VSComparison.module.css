@@ -1,0 +1,214 @@
+.vsSection {
+  padding: 40px 0 80px;
+  background: var(--bg-soft);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.vsContainer {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.vsCard {
+  flex: 1;
+  padding: 32px 24px;
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Without card — muted, faded feel */
+.vsWithout {
+  background: linear-gradient(145deg, #f7f4f9 0%, #f0ebf4 100%);
+  border: 1px solid rgba(125, 95, 146, 0.08);
+}
+
+.vsWithout::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 10px,
+    rgba(125, 95, 146, 0.02) 10px,
+    rgba(125, 95, 146, 0.02) 20px
+  );
+  pointer-events: none;
+}
+
+/* With card — vibrant, glowing */
+.vsWith {
+  background: var(--bg-dark);
+  position: relative;
+}
+
+.vsWith::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at 30% 70%,
+    rgba(168, 85, 247, 0.15) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+.vsWith::after {
+  content: "";
+  position: absolute;
+  bottom: -30%;
+  right: -30%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(
+    circle at 70% 80%,
+    rgba(236, 72, 153, 0.1) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+/* Labels */
+.vsLabel {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.vsLabel strong {
+  font-weight: 700;
+}
+
+.vsWithout .vsLabel {
+  color: var(--text-muted);
+}
+
+.vsWithout .vsLabel strong {
+  color: var(--text);
+}
+
+.vsWith .vsLabel {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.vsWith .vsLabel strong {
+  color: #ec4899;
+}
+
+/* Metric display */
+.vsMetric {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.vsIcon {
+  font-size: 36px;
+}
+
+.vsNumber {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.vsWithout .vsNumber {
+  color: var(--text-muted);
+}
+
+.vsWith .vsNumber {
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f97316 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Center arrow */
+.vsArrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  background: var(--bg-soft);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(39, 31, 54, 0.12);
+  border: 1px solid rgba(125, 95, 146, 0.1);
+}
+
+.vsArrow svg {
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .vsSection {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 24px;
+  }
+
+  .vsContainer {
+    max-width: 100%;
+  }
+
+  .vsCard {
+    padding: 24px 16px;
+    border-radius: var(--radius-lg);
+  }
+
+  .vsNumber {
+    font-size: 32px;
+  }
+
+  .vsIcon {
+    font-size: 28px;
+  }
+
+  .vsArrow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .vsArrow svg {
+    width: 14px;
+    height: 14px;
+  }
+}
