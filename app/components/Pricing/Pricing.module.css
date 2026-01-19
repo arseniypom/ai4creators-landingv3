@@ -1,0 +1,213 @@
+.pricing {
+  padding: 100px 0;
+  background: linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(50% 50% at 50% 50%, #ecd8f3 0%, transparent 60%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.priceBox {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 56px 48px;
+  max-width: 480px;
+  margin: 48px auto 0;
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(8px);
+}
+
+.pricingNote {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.pricingNote strong {
+  color: var(--text);
+}
+
+.price {
+  font-size: 72px;
+  font-weight: 700;
+  background: linear-gradient(to right, #a855f7, #ec4899, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 12px;
+}
+
+.priceOld {
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--text-light);
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: var(--text-light);
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.priceMo {
+  font-size: 24px;
+  font-weight: 500;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: var(--text-muted);
+  color: var(--text-muted);
+}
+
+.pricePeriod {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.processSteps {
+  text-align: left;
+  margin-bottom: 32px;
+  padding: 24px;
+  background: rgba(125, 95, 146, 0.06);
+  border-radius: 12px;
+}
+
+.processLabel {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.processStep {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.processStep:last-child {
+  margin-bottom: 0;
+}
+
+.processNum {
+  width: 28px;
+  height: 28px;
+  background: var(--accent-gradient);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  flex-shrink: 0;
+  -webkit-text-fill-color: #ffffff;
+}
+
+.processStep > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.processStep strong {
+  color: var(--text);
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+
+.processStep span {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.ctaPrimary {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 18px 48px;
+  background: linear-gradient(to right, #a855f7, #ec4899, #f97316);
+  background-size: 150% 100%;
+  background-position: 0% 50%;
+  color: var(--text-inverse);
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-pill);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 24px rgba(168, 85, 247, 0.3);
+}
+
+.ctaPrimary:hover {
+  transform: translateY(-3px) scale(1.02);
+  background-position: 100% 50%;
+  box-shadow: 0 8px 32px rgba(236, 72, 153, 0.4);
+}
+
+.guarantee {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .pricing {
+    padding: 80px 0;
+  }
+
+  .container {
+    padding: 0 24px;
+  }
+
+  .priceBox {
+    padding: 40px 32px;
+  }
+
+  .price {
+    font-size: 56px;
+  }
+
+  .ctaPrimary {
+    padding: 16px 36px;
+    font-size: 16px;
+  }
+}

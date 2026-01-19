@@ -1,0 +1,87 @@
+.howItWorks {
+  padding: 100px 0;
+  background: var(--bg-dark);
+  color: var(--text-inverse);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.sectionTitle {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.howSteps {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.howStep {
+  padding-left: 80px;
+  position: relative;
+}
+
+.howStep::before {
+  content: attr(data-number);
+  position: absolute;
+  left: 0;
+  top: -8px;
+  font-size: 48px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.15);
+  line-height: 1;
+}
+
+.howStep h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-inverse);
+}
+
+.stepSubtitle {
+  color: var(--accent-light);
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.howStep p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .howItWorks {
+    padding: 80px 0;
+  }
+
+  .container {
+    padding: 0 24px;
+  }
+
+  .howStep {
+    padding-left: 60px;
+  }
+
+  .howStep::before {
+    font-size: 36px;
+  }
+
+  .howStep h3 {
+    font-size: 20px;
+  }
+}
