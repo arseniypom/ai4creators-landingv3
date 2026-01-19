@@ -174,7 +174,7 @@ export default function Home() {
               </div>
             </div>
 
-            <p className="pricing-note">We&apos;re building the automated platform. Until it&apos;s ready, you get <strong>personal service</strong> — everything delivered straight to your inbox. Early members get first access when we launch.</p>
+            <p className="pricing-note">We&apos;re building the automated platform. Until it&apos;s ready, you get <strong>personal service</strong> — everything delivered straight to your inbox. Early members keep this price forever + get first access when we launch.</p>
 
             <a href="#" className="cta-primary">Join Early Access</a>
             <p className="guarantee">7-day money back guarantee</p>
