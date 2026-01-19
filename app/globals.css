@@ -175,7 +175,7 @@ h1 {
    PROBLEM SECTION
    ================================ */
 .problem {
-    padding: 100px 0;
+    padding: 100px 0 20px;
     background: var(--bg-soft);
 }
 
@@ -201,8 +201,8 @@ h1 {
    VS COMPARISON SECTION
    ================================ */
 .vs-section {
-    padding: 80px 0;
-    background: var(--bg);
+    padding: 40px 0 80px;
+    background: var(--bg-soft);
 }
 
 .vs-container {
@@ -287,22 +287,32 @@ h1 {
 
 /* Labels */
 .vs-label {
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
     margin-bottom: 20px;
     position: relative;
     z-index: 1;
 }
 
+.vs-label strong {
+    font-weight: 700;
+}
+
 .vs-without .vs-label {
-    color: var(--text-light);
-    opacity: 0.7;
+    color: var(--text-muted);
+}
+
+.vs-without .vs-label strong {
+    color: var(--text);
 }
 
 .vs-with .vs-label {
-    color: var(--accent-light);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.vs-with .vs-label strong {
+    color: #ec4899;
 }
 
 /* Metric display */
@@ -310,20 +320,14 @@ h1 {
     position: relative;
     z-index: 1;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 4px;
+    justify-content: center;
+    gap: 12px;
 }
 
 .vs-icon {
-    font-size: 28px;
-    margin-bottom: 8px;
-    opacity: 0.9;
-}
-
-.vs-without .vs-icon {
-    filter: grayscale(30%);
-    opacity: 0.6;
+    font-size: 36px;
 }
 
 .vs-number {
@@ -334,7 +338,7 @@ h1 {
 }
 
 .vs-without .vs-number {
-    color: var(--text-light);
+    color: var(--text-muted);
 }
 
 .vs-with .vs-number {
@@ -351,8 +355,7 @@ h1 {
 }
 
 .vs-without .vs-unit {
-    color: var(--text-light);
-    opacity: 0.6;
+    color: var(--text-muted);
 }
 
 .vs-with .vs-unit {
@@ -368,7 +371,7 @@ h1 {
     z-index: 10;
     width: 40px;
     height: 40px;
-    background: var(--bg);
+    background: var(--bg-soft);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -970,7 +973,7 @@ h1 {
     }
 
     .vs-icon {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     .vs-arrow {

@@ -27,11 +27,10 @@ export default function Home() {
           <div className="vs-container">
             {/* Without */}
             <div className="vs-card vs-without">
-              <div className="vs-label">Without strategy</div>
+              <div className="vs-label">Without strategy<br/>you get <strong>likes</strong></div>
               <div className="vs-metric">
                 <span className="vs-icon">❤️</span>
                 <span className="vs-number">2,847</span>
-                <span className="vs-unit">likes</span>
               </div>
             </div>
 
@@ -44,11 +43,10 @@ export default function Home() {
 
             {/* With */}
             <div className="vs-card vs-with">
-              <div className="vs-label">With strategy</div>
+              <div className="vs-label">With strategy<br/>you get <strong>sales</strong></div>
               <div className="vs-metric">
                 <span className="vs-icon">💰</span>
                 <span className="vs-number">$4,200</span>
-                <span className="vs-unit">this month</span>
               </div>
             </div>
           </div>
