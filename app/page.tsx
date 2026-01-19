@@ -4,11 +4,11 @@ export default function Home() {
       {/* Hero */}
       <section className="hero">
         <div className="container">
-          <div className="eyebrow">Your AI co-pilot for Instagram growth</div>
-          <h1>Stop guessing<br />what to post.<br /><span className="gradient-text">Start getting sales.</span></h1>
-          <p className="hero-sub">Get scripts built for YOUR audience based on proven winners. Ready to film every week.</p>
+          <div className="eyebrow">Your AI co-pilot for Instagram sales</div>
+          <h1>Stop guessing<br />what to post.<br /><span className="gradient-text">Create reels that sell.</span></h1>
+          <p className="hero-sub">Get scripts built for YOUR audience and offer based on proven formats. Ready to film every week.</p>
           <a href="#pricing" className="cta-primary">Join Early Access — $29/mo</a>
-          <p className="trust-line">Be one of the first 50 clients to try</p>
+          <p className="trust-line">Be one of the first 50 creators to try</p>
         </div>
       </section>
 
@@ -150,9 +150,10 @@ export default function Home() {
               </div>
             </div>
 
+            <p className="pricing-note">We&apos;re building the automated platform. Until it&apos;s ready, you get <strong>personal service</strong> — everything delivered straight to your inbox. Early members get first access when we launch.</p>
+
             <a href="#" className="cta-primary">Join Early Access</a>
             <p className="guarantee">7-day money back guarantee</p>
-            <p className="transparency-note">You&apos;re getting personal service while we build the tool — that&apos;s the pilot advantage.</p>
           </div>
         </div>
       </section>
@@ -160,33 +161,33 @@ export default function Home() {
       {/* FAQ */}
       <section className="faq">
         <div className="container">
-          <div className="section-title">Questions</div>
+          <div className="section-title">FAQ</div>
 
           <div className="faq-list">
-            <div className="faq-item">
-              <h3>What if I hate being on camera?</h3>
+            <details className="faq-item">
+              <summary>What if I hate being on camera?</summary>
               <p>Every script works as voiceover, B-roll footage, or text carousel. You choose what fits your style.</p>
-            </div>
+            </details>
 
-            <div className="faq-item">
-              <h3>How is this different from AI tools or content templates?</h3>
+            <details className="faq-item">
+              <summary>How is this different from AI tools or content templates?</summary>
               <p>This isn&apos;t generic. We analyze YOUR niche and audience first, then create scripts based on proven content formats that already convert in your space.</p>
-            </div>
+            </details>
 
-            <div className="faq-item">
-              <h3>How personalized is this really?</h3>
+            <details className="faq-item">
+              <summary>How personalized is this really?</summary>
               <p>You fill out a detailed questionnaire about your niche, ideal client, and current positioning. Everything is built from that foundation — not copy-pasted templates.</p>
-            </div>
+            </details>
 
-            <div className="faq-item">
-              <h3>What if the content doesn&apos;t work for me?</h3>
+            <details className="faq-item">
+              <summary>What if the content doesn&apos;t work for me?</summary>
               <p>Cancel anytime. You keep the strategy report and all scripts. But if the content is built for your specific audience and based on proven formats, it works.</p>
-            </div>
+            </details>
 
-            <div className="faq-item">
-              <h3>What&apos;s &quot;early access&quot; mean?</h3>
+            <details className="faq-item">
+              <summary>What&apos;s &quot;early access&quot; mean?</summary>
               <p>We&apos;re in pilot phase — scripts are personally crafted, not fully automated yet. That means more hands-on attention for you while we refine the system. You get better results, we get feedback. Win-win.</p>
-            </div>
+            </details>
           </div>
         </div>
       </section>

@@ -581,6 +581,18 @@ h1 {
     backdrop-filter: blur(8px);
 }
 
+.pricing-note {
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.pricing-note strong {
+    color: var(--text);
+}
+
 .price {
     font-size: 72px;
     font-weight: 700;
@@ -721,7 +733,7 @@ h1 {
 .guarantee {
     font-size: 14px;
     color: var(--text-light);
-    margin-top: 24px;
+    margin-top: 10px;
 }
 
 .transparency-note {
@@ -740,26 +752,7 @@ h1 {
    ================================ */
 .faq {
     padding: 100px 0 120px;
-    background: var(--bg);
-    position: relative;
-    overflow: hidden;
-}
-
-.faq::before {
-    content: '';
-    position: absolute;
-    top: -300px;
-    right: -200px;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(50% 50% at 50% 50%, #ecd8f3 0%, transparent 70%);
-    opacity: 0.35;
-    pointer-events: none;
-}
-
-.faq .container {
-    position: relative;
-    z-index: 1;
+    background: #ffffff;
 }
 
 .faq .section-title {
@@ -772,7 +765,7 @@ h1 {
 }
 
 .faq-item {
-    padding: 32px 0;
+    padding: 0;
     border-bottom: 1px solid var(--card-border);
 }
 
@@ -780,17 +773,59 @@ h1 {
     border-top: 1px solid var(--card-border);
 }
 
-.faq-item h3 {
+.faq-item summary {
     font-size: 18px;
     font-weight: 600;
-    margin-bottom: 12px;
     color: var(--text);
+    padding: 24px 0;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    transition: color 0.2s ease;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: '+';
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--accent);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.faq-item[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.faq-item summary:hover {
+    color: var(--accent);
 }
 
 .faq-item p {
     color: var(--text-muted);
     font-size: 16px;
     line-height: 1.7;
+    padding-bottom: 24px;
+    margin: 0;
+    animation: faqFadeIn 0.3s ease-out;
+}
+
+@keyframes faqFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ================================
