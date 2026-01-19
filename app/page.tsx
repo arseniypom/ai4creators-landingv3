@@ -1,4 +1,5 @@
 import {
+  FloatingNav,
   Hero,
   Problem,
   VSComparison,
@@ -11,6 +12,7 @@ import {
 export default function Home() {
   return (
     <>
+      <FloatingNav />
       <Hero />
       <Problem />
       <VSComparison />

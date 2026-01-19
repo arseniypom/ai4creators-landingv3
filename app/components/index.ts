@@ -1,3 +1,4 @@
+export { FloatingNav } from "./FloatingNav/FloatingNav";
 export { Hero } from "./Hero/Hero";
 export { Problem } from "./Problem/Problem";
 export { VSComparison } from "./VSComparison/VSComparison";
