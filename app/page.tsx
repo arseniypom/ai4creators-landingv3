@@ -82,6 +82,32 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Preview Section */}
+      <section className="preview-section">
+        <div className="container">
+          <div className="preview-content">
+            <div className="preview-label">Sneak Peek</div>
+            <h2 className="preview-headline">
+              Here&apos;s what a template <span>actually looks like</span>
+            </h2>
+
+            <div className="screenshot-wrapper">
+              <div className="screenshot-glow"></div>
+              <div className="screenshot-card">
+                <img src="/images/script-preview.png" alt="Script Template Example" />
+              </div>
+            </div>
+
+            <p className="preview-caption">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Hook, body, CTA — based on a top-performing video
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Features - Hidden for now
       <section className="features">
         <div className="container">
