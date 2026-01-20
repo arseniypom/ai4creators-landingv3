@@ -1,6 +1,16 @@
+'use client';
+
+import posthog from 'posthog-js';
 import styles from "./Hero.module.css";
 
 export function Hero() {
+  const handleCtaClick = () => {
+    posthog.capture('cta_clicked', {
+      location: 'hero',
+      cta_text: 'Join Early Access — $29/mo',
+    });
+  };
+
   return (
     <section className={styles.hero}>
       <div className={styles.container}>
@@ -16,7 +26,7 @@ export function Hero() {
           Get scripts built for YOUR audience and offer based on proven formats.
           Ready to film every week.
         </p>
-        <a href="#pricing" className={styles.ctaPrimary}>
+        <a href="#pricing" className={styles.ctaPrimary} onClick={handleCtaClick}>
           Join Early Access — $29/mo
         </a>
         <p className={styles.trustLine}>Be one of the first 50 creators to try</p>

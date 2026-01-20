@@ -1,6 +1,16 @@
+'use client';
+
+import posthog from 'posthog-js';
 import styles from "./Pricing.module.css";
 
 export function Pricing() {
+  const handleCtaClick = () => {
+    posthog.capture('cta_clicked', {
+      location: 'pricing',
+      cta_text: 'Join Early Access',
+    });
+  };
+
   return (
     <section className={styles.pricing} id="pricing">
       <div className={styles.container}>
@@ -47,7 +57,7 @@ export function Pricing() {
             first access when we launch.
           </p>
 
-          <a href="#pricing" className={styles.ctaPrimary}>
+          <a href="#pricing" className={styles.ctaPrimary} onClick={handleCtaClick}>
             Join Early Access
           </a>
           <p className={styles.guarantee}>7-day money back guarantee</p>
