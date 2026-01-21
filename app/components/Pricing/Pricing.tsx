@@ -1,7 +1,15 @@
 'use client';
 
 import posthog from 'posthog-js';
-import styles from "./Pricing.module.css";
+import styles from './Pricing.module.css';
+
+const STRIPE_PAYMENT_LINKS = {
+  test: 'https://buy.stripe.com/test_cNi5kE4tle460gS8qT1Jm00',
+  live: 'https://buy.stripe.com/5kQbIUaRSee3eBl7ml08g00',
+};
+
+const isTestMode = process.env.NEXT_PUBLIC_STRIPE_MODE === 'test';
+const STRIPE_PAYMENT_LINK = isTestMode ? STRIPE_PAYMENT_LINKS.test : STRIPE_PAYMENT_LINKS.live;
 
 export function Pricing() {
   const handleCtaClick = () => {
@@ -57,7 +65,11 @@ export function Pricing() {
             first access when we launch.
           </p>
 
-          <a href="#pricing" className={styles.ctaPrimary} onClick={handleCtaClick}>
+          <a
+            href={STRIPE_PAYMENT_LINK}
+            className={styles.ctaPrimary}
+            onClick={handleCtaClick}
+          >
             Join Early Access
           </a>
           <p className={styles.guarantee}>7-day money back guarantee</p>

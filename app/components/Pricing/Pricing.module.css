@@ -171,16 +171,25 @@
   color: var(--text-inverse);
   font-size: 18px;
   font-weight: 600;
+  font-family: inherit;
   text-decoration: none;
+  border: none;
   border-radius: var(--radius-pill);
+  cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 24px rgba(168, 85, 247, 0.3);
 }
 
-.ctaPrimary:hover {
+.ctaPrimary:hover:not(:disabled) {
   transform: translateY(-3px) scale(1.02);
   background-position: 100% 50%;
   box-shadow: 0 8px 32px rgba(236, 72, 153, 0.4);
+}
+
+.ctaPrimary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .guarantee {

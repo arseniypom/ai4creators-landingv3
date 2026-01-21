@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-AI4Creators landing page - a marketing site for an AI-powered sales script generation tool for Instagram Reels content creators. Built with Next.js 16, React 19, and TypeScript.
+InstaGrow landing page - a marketing site for an AI-powered sales script generation tool for Instagram Reels content creators. Built with Next.js 16, React 19, and TypeScript.
 
 ## Commands
 

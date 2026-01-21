@@ -9,7 +9,7 @@ const onest = Onest({
 });
 
 export const metadata: Metadata = {
-  title: "AI4Creators - Stop Creating Content That Doesn't Convert",
+  title: "InstaGrow - Stop Creating Content That Doesn't Convert",
   description:
     "Get scripts built for YOUR audience — not random templates. Based on proven winners. Ready to film every week.",
   keywords: [
@@ -19,18 +19,18 @@ export const metadata: Metadata = {
     "creator tools",
     "AI content",
   ],
-  authors: [{ name: "AI4Creators" }],
+  authors: [{ name: "InstaGrow" }],
   openGraph: {
-    title: "AI4Creators - Create Reels That Sell",
+    title: "InstaGrow - Create Reels That Sell",
     description:
       "Get scripts built for YOUR audience — not random templates. Based on proven winners. Ready to film every week.",
     type: "website",
     locale: "en_US",
-    siteName: "AI4Creators",
+    siteName: "InstaGrow",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI4Creators - Create Reels That Sell",
+    title: "InstaGrow - Create Reels That Sell",
     description:
       "Get scripts built for YOUR audience — not random templates. Based on proven winners.",
   },
