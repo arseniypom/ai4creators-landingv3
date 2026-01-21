@@ -6,3 +6,4 @@ export { HowItWorks } from "./HowItWorks/HowItWorks";
 export { Preview } from "./Preview/Preview";
 export { Pricing } from "./Pricing/Pricing";
 export { FAQ } from "./FAQ/FAQ";
+export { Footer } from "./Footer/Footer";

@@ -7,6 +7,7 @@ import {
   Preview,
   Pricing,
   FAQ,
+  Footer,
 } from "./components";
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
       <Preview />
       <Pricing />
       <FAQ />
+      <Footer />
     </>
   );
 }

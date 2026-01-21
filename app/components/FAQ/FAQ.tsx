@@ -35,7 +35,7 @@ export function FAQ() {
   };
 
   return (
-    <section className={styles.faq}>
+    <section id="faq" className={styles.faq}>
       <div className={styles.container}>
         <div className={styles.sectionTitle}>FAQ</div>
 
