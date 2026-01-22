@@ -3,20 +3,24 @@ import { stripe, webhookSecret } from '@/lib/stripe';
 import { Resend } from 'resend';
 import Stripe from 'stripe';
 
+const isTestMode = process.env.NEXT_PUBLIC_STRIPE_MODE !== 'live';
+
 const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
   : null;
 
 async function sendWelcomeEmail(email: string, name?: string) {
+  console.log('[EMAIL] Attempting to send welcome email to:', email);
+
   if (!resend) {
-    console.warn('RESEND_API_KEY not set, skipping welcome email');
-    return;
+    console.warn('[EMAIL] RESEND_API_KEY not set, skipping welcome email');
+    return { success: false, reason: 'no_api_key' };
   }
 
   const firstName = name?.split(' ')[0] || 'there';
 
   try {
-    await resend.emails.send({
+    const result = await resend.emails.send({
       from: 'InstaGrow <team@insta-grow.com>',
       to: email,
       subject: 'Welcome to InstaGrow! Here\'s what happens next',
@@ -65,15 +69,20 @@ async function sendWelcomeEmail(email: string, name?: string) {
       `,
     });
 
-    console.log('Welcome email sent to:', email);
+    console.log('[EMAIL] Welcome email sent successfully:', { email, result });
+    return { success: true, result };
   } catch (error) {
-    console.error('Failed to send welcome email:', error);
+    console.error('[EMAIL] Failed to send welcome email:', error);
+    return { success: false, error };
   }
 }
 
 export async function POST(request: NextRequest) {
+  console.log('[WEBHOOK] Received webhook request');
+  console.log('[WEBHOOK] Mode:', isTestMode ? 'TEST' : 'LIVE');
+
   if (!stripe) {
-    console.error('STRIPE_SECRET_KEY is not set');
+    console.error('[WEBHOOK] STRIPE_SECRET_KEY is not set for', isTestMode ? 'test' : 'live', 'mode');
     return NextResponse.json(
       { error: 'Stripe not configured' },
       { status: 500 }
@@ -83,7 +92,10 @@ export async function POST(request: NextRequest) {
   const body = await request.text();
   const signature = request.headers.get('stripe-signature');
 
+  console.log('[WEBHOOK] Has signature:', !!signature);
+
   if (!signature) {
+    console.error('[WEBHOOK] Missing stripe-signature header');
     return NextResponse.json(
       { error: 'Missing stripe-signature header' },
       { status: 400 }
@@ -91,7 +103,7 @@ export async function POST(request: NextRequest) {
   }
 
   if (!webhookSecret) {
-    console.error('STRIPE_WEBHOOK_SECRET is not set for current mode');
+    console.error('[WEBHOOK] STRIPE_WEBHOOK_SECRET is not set for', isTestMode ? 'test' : 'live', 'mode');
     return NextResponse.json(
       { error: 'Webhook secret not configured' },
       { status: 500 }
@@ -102,8 +114,9 @@ export async function POST(request: NextRequest) {
 
   try {
     event = stripe.webhooks.constructEvent(body, signature, webhookSecret);
+    console.log('[WEBHOOK] Event verified successfully:', event.type);
   } catch (error) {
-    console.error('Webhook signature verification failed:', error);
+    console.error('[WEBHOOK] Signature verification failed:', error);
     return NextResponse.json(
       { error: 'Invalid signature' },
       { status: 400 }
@@ -114,9 +127,10 @@ export async function POST(request: NextRequest) {
     case 'checkout.session.completed': {
       const session = event.data.object as Stripe.Checkout.Session;
 
-      console.log('Payment successful:', {
+      console.log('[WEBHOOK] Payment successful:', {
         sessionId: session.id,
         customerEmail: session.customer_details?.email,
+        customerName: session.customer_details?.name,
         customerId: session.customer,
         subscriptionId: session.subscription,
         amountTotal: session.amount_total,
@@ -124,10 +138,13 @@ export async function POST(request: NextRequest) {
 
       // Send welcome email
       if (session.customer_details?.email) {
-        await sendWelcomeEmail(
+        const emailResult = await sendWelcomeEmail(
           session.customer_details.email,
           session.customer_details.name || undefined
         );
+        console.log('[WEBHOOK] Email result:', emailResult);
+      } else {
+        console.warn('[WEBHOOK] No customer email found in session');
       }
 
       break;
@@ -135,13 +152,14 @@ export async function POST(request: NextRequest) {
 
     case 'customer.subscription.deleted': {
       const subscription = event.data.object as Stripe.Subscription;
-      console.log('Subscription cancelled:', subscription.id);
+      console.log('[WEBHOOK] Subscription cancelled:', subscription.id);
       break;
     }
 
     default:
-      console.log(`Unhandled event type: ${event.type}`);
+      console.log('[WEBHOOK] Unhandled event type:', event.type);
   }
 
+  console.log('[WEBHOOK] Completed successfully');
   return NextResponse.json({ received: true });
 }
