@@ -8,7 +8,8 @@ const STRIPE_PAYMENT_LINKS = {
   live: 'https://buy.stripe.com/5kQbIUaRSee3eBl7ml08g00',
 };
 
-const isTestMode = process.env.NEXT_PUBLIC_STRIPE_MODE === 'test';
+// Default to test mode for safety — live mode requires explicit opt-in
+const isTestMode = process.env.NEXT_PUBLIC_STRIPE_MODE !== 'live';
 const STRIPE_PAYMENT_LINK = isTestMode ? STRIPE_PAYMENT_LINKS.test : STRIPE_PAYMENT_LINKS.live;
 
 export function Pricing() {

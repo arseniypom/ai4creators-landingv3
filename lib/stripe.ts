@@ -1,6 +1,7 @@
 import Stripe from 'stripe';
 
-const isTestMode = process.env.NEXT_PUBLIC_STRIPE_MODE === 'test';
+// Default to test mode for safety — live mode requires explicit opt-in
+const isTestMode = process.env.NEXT_PUBLIC_STRIPE_MODE !== 'live';
 
 const secretKey = isTestMode
   ? process.env.STRIPE_SECRET_KEY_TEST
