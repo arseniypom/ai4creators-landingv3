@@ -1,10 +1,20 @@
 import Stripe from 'stripe';
 
-if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error('STRIPE_SECRET_KEY is not set in environment variables');
-}
+const isTestMode = process.env.NEXT_PUBLIC_STRIPE_MODE === 'test';
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-  apiVersion: '2025-12-15.clover',
-  typescript: true,
-});
+const secretKey = isTestMode
+  ? process.env.STRIPE_SECRET_KEY_TEST
+  : process.env.STRIPE_SECRET_KEY_LIVE;
+
+export const webhookSecret = isTestMode
+  ? process.env.STRIPE_WEBHOOK_SECRET_TEST
+  : process.env.STRIPE_WEBHOOK_SECRET_LIVE;
+
+// Stripe client - only used by webhook for signature verification
+// Will be null if secret key is not set (build time)
+export const stripe = secretKey
+  ? new Stripe(secretKey, {
+      apiVersion: '2025-12-15.clover',
+      typescript: true,
+    })
+  : (null as unknown as Stripe);
