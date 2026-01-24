@@ -9,15 +9,15 @@ const onest = Onest({
 });
 
 export const metadata: Metadata = {
-  title: "InstaGrow - Stop Creating Content That Doesn't Convert",
+  title: "InstaGrow - Sell With Your Content",
   description:
-    "Get scripts built for YOUR audience — not random templates. Based on proven winners. Ready to film every week.",
+    "Get scripts built for YOUR audience — not random ideas. Based on proven winners. Ready to film every week.",
   keywords: [
-    "content creation",
+    "AI content creation",
     "Instagram reels",
     "sales scripts",
     "creator tools",
-    "AI content",
+    "AI reels",
   ],
   authors: [{ name: "InstaGrow" }],
   openGraph: {
