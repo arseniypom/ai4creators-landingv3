@@ -20,9 +20,9 @@
 }
 
 .previewLabel {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 12px;
@@ -55,9 +55,10 @@
   height: 80%;
   background: linear-gradient(
     135deg,
-    rgba(168, 85, 247, 0.25) 0%,
-    rgba(236, 72, 153, 0.2) 50%,
-    rgba(249, 115, 22, 0.15) 100%
+    rgba(168, 85, 247, 0.22) 0%,
+    rgba(192, 38, 211, 0.18) 35%,
+    rgba(236, 72, 153, 0.18) 60%,
+    rgba(249, 115, 22, 0.12) 100%
   );
   filter: blur(50px);
   border-radius: 50%;

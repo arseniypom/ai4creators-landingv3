@@ -26,8 +26,10 @@ html {
   --accent: #7d5f92;
   --accent-light: #b49cc5;
   --accent-gradient: linear-gradient(135deg, #7d5f92 0%, #b49cc5 100%);
+  --gradient-primary: linear-gradient(135deg, #a855f7 0%, #c026d3 35%, #ec4899 60%, #f97316 100%);
+  --gradient-text: linear-gradient(135deg, #a855f7 0%, #d946ef 40%, #ec4899 70%, #f97316 100%);
   --card-bg: rgba(255, 255, 255, 0.9);
-  --card-border: rgba(125, 95, 146, 0.15);
+  --card-border: rgba(125, 95, 146, 0.12);
   --shadow-soft: 0 4px 24px rgba(39, 31, 54, 0.08);
   --shadow-hover: 0 8px 32px rgba(39, 31, 54, 0.15);
   --radius-sm: 12px;

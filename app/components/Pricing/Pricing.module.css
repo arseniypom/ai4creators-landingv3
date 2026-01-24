@@ -14,7 +14,10 @@
   transform: translate(-50%, -50%);
   width: 900px;
   height: 900px;
-  background: radial-gradient(50% 50% at 50% 50%, #ecd8f3 0%, transparent 60%);
+  background: radial-gradient(50% 50% at 50% 50%,
+    rgba(236, 216, 243, 0.9) 0%,
+    rgba(251, 207, 232, 0.4) 35%,
+    transparent 60%);
   opacity: 0.5;
   pointer-events: none;
 }
@@ -28,12 +31,12 @@
 }
 
 .sectionTitle {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 48px;
+  margin-bottom: 52px;
   text-align: center;
 }
 
@@ -41,7 +44,7 @@
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-lg);
-  padding: 56px 48px;
+  padding: 52px 44px;
   max-width: 480px;
   margin: 48px auto 0;
   box-shadow: var(--shadow-soft);
@@ -63,7 +66,7 @@
 .price {
   font-size: 72px;
   font-weight: 700;
-  background: linear-gradient(to right, #a855f7, #ec4899, #f97316);
+  background: var(--gradient-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -110,10 +113,10 @@
 }
 
 .processLabel {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 0.15em;
   color: var(--accent);
   margin-bottom: 20px;
 }
@@ -164,26 +167,29 @@
   display: inline-block;
   width: 100%;
   text-align: center;
-  padding: 18px 48px;
-  background: linear-gradient(to right, #a855f7, #ec4899, #f97316);
+  padding: 17px 52px;
+  background: var(--gradient-primary);
   background-size: 150% 100%;
   background-position: 0% 50%;
   color: var(--text-inverse);
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   font-family: inherit;
   text-decoration: none;
   border: none;
   border-radius: var(--radius-pill);
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 24px rgba(168, 85, 247, 0.3);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.25),
+              0 8px 40px rgba(236, 72, 153, 0.15);
 }
 
 .ctaPrimary:hover:not(:disabled) {
   transform: translateY(-3px) scale(1.02);
   background-position: 100% 50%;
-  box-shadow: 0 8px 32px rgba(236, 72, 153, 0.4);
+  box-shadow: 0 6px 24px rgba(168, 85, 247, 0.3),
+              0 12px 48px rgba(236, 72, 153, 0.25);
 }
 
 .ctaPrimary:disabled {
@@ -208,7 +214,7 @@
   }
 
   .priceBox {
-    padding: 40px 32px;
+    padding: 36px 28px;
   }
 
   .price {
@@ -216,7 +222,7 @@
   }
 
   .ctaPrimary {
-    padding: 16px 36px;
-    font-size: 16px;
+    padding: 15px 40px;
+    font-size: 15px;
   }
 }

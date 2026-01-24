@@ -20,7 +20,7 @@
 
 .vsCard {
   flex: 1;
-  padding: 32px 24px;
+  padding: 36px 28px;
   border-radius: var(--radius-xl);
   display: flex;
   flex-direction: column;
@@ -146,7 +146,7 @@
 }
 
 .vsWith .vsNumber {
-  background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #f97316 100%);
+  background: var(--gradient-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -190,7 +190,7 @@
   }
 
   .vsCard {
-    padding: 24px 16px;
+    padding: 28px 20px;
     border-radius: var(--radius-lg);
   }
 
