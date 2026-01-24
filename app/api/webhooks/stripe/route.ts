@@ -39,7 +39,7 @@ async function sendWelcomeEmail(email: string, name?: string) {
           <div style="background: #fbf5ff; border-radius: 12px; padding: 24px; margin-bottom: 24px;">
             <p style="color: #7d5f92; font-size: 14px; font-weight: 600; margin: 0 0 16px 0;">STEP 1</p>
             <p style="color: #271f36; font-size: 16px; margin: 0 0 8px 0;"><strong>Fill out the quick form</strong></p>
-            <p style="color: #7d5f92; font-size: 14px; margin: 0;">Tell us about your niche, product, and audience. Takes ~5 minutes.</p>
+            <p style="color: #7d5f92; font-size: 14px; margin: 0;">Tell us about your niche, product, and audience. Takes ~5 minutes. Click "Fill Out the Form" below.</p>
           </div>
 
           <div style="background: #fbf5ff; border-radius: 12px; padding: 24px; margin-bottom: 24px;">
